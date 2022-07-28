@@ -46,6 +46,7 @@ body{
     text-transform: uppercase;
     animation:  typing 8s steps(10) infinite;
     overflow: hidden;
+    z-index: -999;
 }
 @keyframes typing{
     0%, 90%, 100%{
