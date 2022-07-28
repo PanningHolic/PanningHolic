@@ -16,6 +16,7 @@ body{
 .loader{
     position: relative;
     -webkit-box-reflect: below 1px linear-gradient(transparent, #0002);
+    z-index: -999;
 }
 
 .loader::before{
