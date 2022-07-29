@@ -98,52 +98,52 @@ function openBlackBox() {
 function gifAndName(){
     if(number == 0) {
         document.getElementById('name').innerHTML = "疾行";
-        document.getElementById('move_picture').src = "/images/疾行.gif";
+        document.getElementById('move_picture').src = "../images/疾行.gif";
     } else if(number == 1) {
         document.getElementById('name').innerHTML = "破壞";
-        document.getElementById('move_picture').src = "/images/破壞.gif";
+        document.getElementById('move_picture').src = "../images/破壞.gif";
     } else if(number == 2) {
         document.getElementById('name').innerHTML = "狙殺";
-        document.getElementById('move_picture').src = "/images/狙殺.gif";
+        document.getElementById('move_picture').src = "../images/狙殺.gif";
     } else if(number == 3) {
         document.getElementById('name').innerHTML = "守護";
-        document.getElementById('move_picture').src = "/images/守護.gif";
+        document.getElementById('move_picture').src = "../images/守護.gif";
     } else if(number == 4) {
         document.getElementById('name').innerHTML = "偵查";
-        document.getElementById('move_picture').src = "/images/偵查.gif";
+        document.getElementById('move_picture').src = "../images/偵查.gif";
     } else if(number == 5) {
         document.getElementById('name').innerHTML = "潛行者";
-        document.getElementById('move_picture').src = "/images/潛行者.gif";
+        document.getElementById('move_picture').src = "../images/潛行者.gif";
     } else if(number == 6) {
         document.getElementById('name').innerHTML = "束縛者";
-        document.getElementById('move_picture').src = "/images/束縛者.gif";
+        document.getElementById('move_picture').src = "../images/束縛者.gif";
     } else if(number == 7) {
         document.getElementById('name').innerHTML = "破空者";
-        document.getElementById('move_picture').src = "/images/破空者.gif";
+        document.getElementById('move_picture').src = "../images/破空者.gif";
     } else if(number == 8) {
         document.getElementById('name').innerHTML = "神秘碎片1";
-        document.getElementById('move_picture').src = "/images/神秘碎片1.gif";
+        document.getElementById('move_picture').src = "../images/神秘碎片1.gif";
     } else if(number == 9) {
         document.getElementById('name').innerHTML = "神秘碎片2";
-        document.getElementById('move_picture').src = "/images/神秘碎片2.gif";
+        document.getElementById('move_picture').src = "../images/神秘碎片2.gif";
     } else if(number == 10) {
         document.getElementById('name').innerHTML = "神秘碎片3";
-        document.getElementById('move_picture').src = "/images/神秘碎片3.gif";
+        document.getElementById('move_picture').src = "../images/神秘碎片3.gif";
     } else if(number == 11) {
         document.getElementById('name').innerHTML = "神秘碎片4";
-        document.getElementById('move_picture').src = "/images/神秘碎片4.gif";
+        document.getElementById('move_picture').src = "../images/神秘碎片4.gif";
     } else if(number == 12) {
         document.getElementById('name').innerHTML = "神秘碎片5";
-        document.getElementById('move_picture').src = "/images/神秘碎片5.gif";
+        document.getElementById('move_picture').src = "../images/神秘碎片5.gif";
     } else if(number == 13) {
         document.getElementById('name').innerHTML = "神秘碎片6";
-        document.getElementById('move_picture').src = "/images/神秘碎片6.gif";
+        document.getElementById('move_picture').src = "../images/神秘碎片6.gif";
     } else if(number == 14) {
         document.getElementById('name').innerHTML = "金牌！！！";
-        document.getElementById('move_picture').src = "/images/金牌.gif";
+        document.getElementById('move_picture').src = "../images/金牌.gif";
     } else if(number == 15) {
         document.getElementById('name').innerHTML = "護盾！！！";
-        document.getElementById('move_picture').src = "/images/護盾.gif";
+        document.getElementById('move_picture').src = "../images/護盾.gif";
     }
     $(".gif").fadeIn(1000);
     $(".NFTname").fadeIn(1000);
