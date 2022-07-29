@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Chicks Ball</title>
+    <title>Panning Holic</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
+    <link rel="stylesheet" href="TemplateData/loading.css">
     <script src="TemplateData/web3.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="https://unpkg.com/@metamask/detect-provider/dist/detect-provider.min.js"></script>
@@ -26,7 +27,11 @@
   <body>
     <canvas id="unity-canvas"></canvas>
     <div id="unity-container" class="unity-desktop">
-      
+
+      <div class="loader">
+        <h2>Loading...</h2>
+      </div>
+
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
