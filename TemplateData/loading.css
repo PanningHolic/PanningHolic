@@ -1,3 +1,9 @@
+:root{
+    --s: 5;
+    --h: 18.5;
+    --speed: 5s;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -7,6 +13,7 @@
 
 body{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
@@ -55,5 +62,43 @@ body{
     }
     30%, 60%{
         width: 401.88px;
+    }
+}
+
+.notice{
+    position: relative;
+    top: 100px;
+    color: #fff;
+    width: 820px;
+    height: calc(var(--h) * 1px);
+    overflow: hidden;
+    z-index: -99;
+}
+
+ul{
+    display: flex;
+    flex-direction: column;
+    animation: move calc(var(--speed) * var(--s)) steps(var(--s)) infinite;
+}
+
+ul li{
+    width: 100%;
+    animation: liMove calc(var(--speed)) infinite;
+}
+@keyframes move{
+    0%{
+        transform: translate(0, 0);
+    }
+    100%{
+        transform: translate(0, calc(var(--s) * var(--h) * -1px));
+    }
+}
+@keyframes liMove {
+    0%{
+        transform: translate(0, 0);
+    }
+    30%,
+    100%{
+        transform: translate(0, calc(var(--h) * -1px));
     }
 }
