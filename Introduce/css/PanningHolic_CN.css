@@ -18,7 +18,6 @@
 .bg img {
     max-height: 100%;
     width: 100%;
-    filter: blur(5px) brightness(.7);
 }
 
 section{
@@ -171,27 +170,6 @@ section .gameTitle p{
     left: 0px;
     content: '';
     background: rgba(0, 0, 0, 0.85);
-}
-
-.confirm{
-    width: 100%;
-    height: 100%;
-    display: none;
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    content: '';
-    background: rgba(0, 0, 0, 0.85);
-}
-
-.confirm span{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    color: yellow;
-    font-size: 30px;
-    
 }
 
 .popup-box {

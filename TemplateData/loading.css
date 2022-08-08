@@ -1,6 +1,6 @@
 :root{
     --s: 5;
-    --h: 18.5;
+    --h: 18.4;
     --speed: 5s;
 }
 
@@ -73,6 +73,7 @@ body{
     height: calc(var(--h) * 1px);
     overflow: hidden;
     z-index: -99;
+    text-align: center;
 }
 
 ul{

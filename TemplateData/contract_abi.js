@@ -1,10 +1,5 @@
 var CashFlowABI = [
   {
-    "inputs": [],
-    "stateMutability": "nonpayable",
-    "type": "constructor"
-  },
-  {
     "anonymous": false,
     "inputs": [
       {
@@ -22,20 +17,6 @@ var CashFlowABI = [
     ],
     "name": "OwnershipTransferred",
     "type": "event"
-  },
-  {
-    "inputs": [],
-    "name": "ceoAddress",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function",
-    "constant": true
   },
   {
     "inputs": [],
@@ -131,13 +112,6 @@ var CashFlowABI = [
   },
   {
     "inputs": [],
-    "name": "changeState",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [],
     "name": "payForWins",
     "outputs": [],
     "stateMutability": "payable",
@@ -157,19 +131,6 @@ var CashFlowABI = [
     "stateMutability": "view",
     "type": "function",
     "constant": true
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "ref",
-        "type": "address"
-      }
-    ],
-    "name": "clearMarket",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
   },
   {
     "inputs": [],
@@ -200,6 +161,20 @@ var CashFlowABI = [
     "constant": true
   },
   {
+    "inputs": [],
+    "name": "getPlayingTimes",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function",
+    "constant": true
+  },
+  {
     "inputs": [
       {
         "internalType": "uint256",
@@ -208,6 +183,20 @@ var CashFlowABI = [
       }
     ],
     "name": "setEntrance",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "clearMarket",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "changeState",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"

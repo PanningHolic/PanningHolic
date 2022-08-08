@@ -1,4 +1,4 @@
-const contractAddress = "0x518316a8f33717636C14887fa4aF0C50B3FA04d8";
+const contractAddress = "0xaE281bf3cA8EBaAbe209b8Bb1d10963a82B061EA";
 const metamaskChainID = '18';
 const metamaskHexChainID = '0x12';
 
@@ -11,7 +11,6 @@ if(typeof web3 !== 'undefined') {
  }
 
 async function connectMetamask() {
-    myGameInstance.SendMessage("WebManager","ScenesChange","in_progress");   //同步
     ethereum.request({ method: 'eth_requestAccounts' }).then(() =>{
         connectWallet();
     }).catch(() => {
@@ -56,15 +55,7 @@ async function connectWallet() {
     $("#address").text(coinbase.substring(0,14) + "...");
     balance = await web3.eth.getBalance(coinbase);
     $("#balance").text(parseFloat(web3.utils.fromWei(balance)).toFixed(3) + 'ETH');
-    myContract = new web3.eth.Contract(CashFlowABI, contractAddress);
-    myGameInstance.SendMessage("WebManager","ScenesChange","succeeded");  //登入成功，切換畫面
-}
-async function connectWallet_E() {
-    coinbase = await web3.eth.getCoinbase();
-    $("#address").text(coinbase.substring(0,14) + "...");
-    balance = await web3.eth.getBalance(coinbase);
-    $("#balance").text(parseFloat(web3.utils.fromWei(balance)).toFixed(3) + 'ETH');
-    myContract = new web3.eth.Contract(CashFlowABI, contractAddress);
+    CashFlow = new web3.eth.Contract(CashFlowABI, contractAddress)
 }
 
 async function entranceFee() {
@@ -72,54 +63,44 @@ async function entranceFee() {
     if(chainId === metamaskHexChainID) {
         if(location.href.includes('ref')) {
             const address = location.href.split('ref=')[1]
-            const price = await myContract.methods.getEntrance().call();
-            myContract.methods.entranceFee(address).send({
+            const price = await CashFlow.methods.getEntrance().call();
+            CashFlow.methods.entranceFee(address).send({
                 from: coinbase,
                 value: price
-            }).then(function(result) {
-                connectWallet_E(); 
+            }).then((result) => {
+                connectWallet();
                 console.log(result.status);
-                myGameInstance.SendMessage("NetworkManager","PaidStatus","true"); //成功地方要用myGameInstance.SendMessage回傳paid true ;失敗地方回傳LoadingPay false. 都要alert
-                alert("Successful payment,please click the button again.");
                 return result.status;
             }).catch(() =>{
                 console.log("false");
-                myGameInstance.SendMessage("NetworkManager","LoadingPay","false");
-                alert("Payment Fail");
                 return false;
             })
         } else {
-            const price = await myContract.methods.getEntrance().call();
-            myContract.methods.entranceFee().send({
+            const price = await CashFlow.methods.getEntrance().call();
+            CashFlow.methods.entranceFee().send({
                 from: coinbase,
                 value: price
-            }).then(function(result) {
-                connectWallet_E();
+            }).then((result) => {
+                connectWallet();
                 console.log("status: " + result.status);
-                myGameInstance.SendMessage("NetworkManager","PaidStatus","true"); //成功地方要用myGameInstance.SendMessage回傳paid true ;失敗地方回傳LoadingPay false. 都要alert
-                alert("Successful payment,please click the button again.");
                 return result.status;
             }).catch(() =>{
-                console.log(false);
-                myGameInstance.SendMessage("NetworkManager","LoadingPay","false");
-                alert("Payment Fail");
+                console.log("status: " + false);
                 return false;
             })
         }
     } else {
         changeChainId();
-        myGameInstance.SendMessage("NetworkManager","LoadingPay","false");
-        alert("Payment Fail");
     }
 }
 
 async function PayForWins() {
     let chainId = await ethereum.request({method: 'eth_chainId'});
     if(chainId === metamaskHexChainID) {
-        myContract.methods.payForWins().send({
+        CashFlow.methods.payForWins().send({
             from: coinbase
-        }).then(function(result) {
-            connectWallet_E();
+        }).then((result) => {
+            connectWallet();
             console.log("status: " + result.status);
             return result.status;
         }).catch(() =>{
@@ -134,10 +115,10 @@ async function PayForWins() {
 async function ExitGame() {
     let chainId = await ethereum.request({method: 'eth_chainId'});
     if(chainId === metamaskHexChainID) {
-        myContract.methods.exitGame().send({
+        CashFlow.methods.exitGame().send({
             from: coinbase
-        }).then(function(result) {
-            connectWallet_E();
+        }).then((result) => {
+            connectWallet();
             console.log("status: " + result.status);
             return result.status;
         }).catch(() =>{
@@ -149,49 +130,8 @@ async function ExitGame() {
     }
 }
 
-function alertPlayer(){
-    alert("Payment not yet successful.");
-}
-
-function changeState() {
-    myContract.methods.changeState().send({
-        from: coinbase
-    }).then(console.log);
-}
-
-async function getContractBalance() {
-    const balance = await myContract.methods.getBalance().call() * 0.000000000000000001;
-    document.getElementById('vision').innerHTML = balance + 'TST';
-}
-
-async function getState() {
-    const state = await myContract.methods.getState().call();
-    document.getElementById('vision').innerHTML = state;
-}
-
-function SetEntrance(value) {
-    let price = document.getElementById("entrance").value;
-    myContract.methods.setEntrance(price).send({from: coinbase});
-}
-EntranceBtn.addEventListener("click", SetEntrance);
-
-function clearMarket() {
-    myContract.methods.clearMarket(coinbase).send({
-        from: coinbase
-    })
-}
-
-function Show_the_Address(){
-    ethereum.request({ method: 'eth_accounts' }).then((accounts) => {
-      console.log("Address："+accounts[0]);   //accounts為一陣列
-      myGameInstance.SendMessage("Address","Show_Address",accounts[0]);
-    })
-    .catch((error) => {
-      console.error(error);
-    });
-  }
-
 ethereum.on("accountsChanged",async (account) => {
+    console.log(account);
     let chainId = await ethereum.request({method: 'eth_chainId'});
     if(chainId == metamaskHexChainID) {
         connectWallet();
