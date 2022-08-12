@@ -11,6 +11,7 @@ if(typeof web3 !== 'undefined') {
  }
 
 async function connectMetamask() {
+    myGameInstance.SendMessage("WebManager","ScenesChange","in_progress");   //同步
     ethereum.request({ method: 'eth_requestAccounts' }).then(() =>{
         connectWallet();
     }).catch(() => {
@@ -55,7 +56,8 @@ async function connectWallet() {
     $("#address").text(coinbase.substring(0,14) + "...");
     balance = await web3.eth.getBalance(coinbase);
     $("#balance").text(parseFloat(web3.utils.fromWei(balance)).toFixed(3) + 'ETH');
-    CashFlow = new web3.eth.Contract(CashFlowABI, contractAddress)
+    CashFlow = new web3.eth.Contract(CashFlowABI, contractAddress);
+    myGameInstance.SendMessage("WebManager","ScenesChange","succeeded");  //登入成功，切換畫面
 }
 
 async function entranceFee() {
@@ -69,9 +71,13 @@ async function entranceFee() {
                 value: price
             }).then((result) => {
                 connectWallet();
+                myGameInstance.SendMessage("NetworkManager","PaidStatus","true");
+                alert("Successful payment,please click the button again.");
                 console.log(result.status);
                 return result.status;
             }).catch(() =>{
+                myGameInstance.SendMessage("NetworkManager","LoadingPay","false");
+                alert("Payment Fail");
                 console.log("false");
                 return false;
             })
@@ -82,16 +88,36 @@ async function entranceFee() {
                 value: price
             }).then((result) => {
                 connectWallet();
+                myGameInstance.SendMessage("NetworkManager","PaidStatus","true"); //成功地方要用myGameInstance.SendMessage回傳paid true ;失敗地方回傳LoadingPay false. 都要alert
+                alert("Successful payment,please click the button again.");
                 console.log("status: " + result.status);
                 return result.status;
             }).catch(() =>{
+                myGameInstance.SendMessage("NetworkManager","LoadingPay","false");
+                alert("Payment Fail");
                 console.log("status: " + false);
                 return false;
             })
         }
     } else {
         changeChainId();
+        myGameInstance.SendMessage("NetworkManager","LoadingPay","false");
+        alert("Payment Fail");
     }
+}
+
+function alertPlayer(){
+    alert("Payment not yet successful.");
+}
+
+function Show_the_Address(){
+    ethereum.request({ method: 'eth_accounts' }).then((accounts) => {
+        console.log("Address："+accounts[0]);   //accounts為一陣列
+        myGameInstance.SendMessage("Address","Show_Address",accounts[0]);
+    })
+    .catch((error) => {
+        console.error(error);
+    });
 }
 
 async function PayForWins() {

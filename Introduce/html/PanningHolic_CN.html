@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../css/navigation.css">
     <link rel="stylesheet" href="../css/blockchainBtn.css">
     <link rel="stylesheet" href="../fontawesome-free-6.1.1-web/css/all.css">
+    <link rel="shortcut icon" href="../images/favicon_cute.ico" type="image/x-icon">
     <script src="../JS/NFT_abi.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r83/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.4/web3.min.js" integrity="sha512-oMd9Re3VgJcXuZJn9DN6X7S7JUc7xLYZ2UyZ85Mm/xzaW3lwBr4fV2zjuu/n5jY/Of/2JOx35CTa6zvQNxb31Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -16,7 +17,7 @@
 </head>
 <body>
     <div class="bg">
-        <img src="../images/透明大圖.png" alt="">
+        <img src="https://thumbs.gfycat.com/UncomfortableBoringBinturong.webp">
     </div>
     <canvas></canvas>
     <a class="blockchainBtn" onclick="connectMetaMask()">連接錢包</a>
@@ -54,7 +55,17 @@
                     </div>
                 </div>
             </div>
-
+            <h2>關於我們</h2>
+            <div class="cards">
+                <div class="text-card">
+                    <p>&emsp;&emsp;這個遊戲是由兩名大學在校生合作開發出的區塊鏈遊戲，您可以使用ThunderCore區塊鏈支付入場費，所有的交易行為我們將抽取3%作為收益，希望您諒解，遊戲開發製作不易。
+                    </p>
+                    <p>如果您想支持我們的團隊，您可以發送ETH或TT至此錢包地址：0xa8aD68EEFe1dEcdfb0353963b38c502018f08546，我們將萬分感謝🎉🎉🎉。
+                    </p>
+                    <br>
+                    <p>聯絡我們：PanningHolicBusiness@gmail.com</p>
+                </div>
+            </div>
         </div>
     </section>
     <section id="intro1">
@@ -63,11 +74,6 @@
             <div class="cards">
                 <div class="text-card">
                     <h3>淘金狂魔</h3>
-                    <p>&emsp;&emsp;這個遊戲是由兩名大學在校生合作開發出的區塊鏈遊戲，您可以使用ThunderCore區塊鏈支付入場費，所有的交易行為我們將抽取3%作為收益，希望您諒解，遊戲開發製作不易。
-                    </p>
-                    <p>如果您想支持我們的團隊，您可以發送ETH或TT至此錢包地址：0xa8aD68EEFe1dEcdfb0353963b38c502018f08546，我們將萬分感謝🎉🎉🎉。
-                    </p>
-                    <br>
                     <p>&emsp;&emsp;當遊戲開始時，你將看到一個按鈕「login with MetaMask」，按下按鈕後我們會做以下幾件事：將您的MetaMask錢包連接至我們的網站，檢測您的MetaMask錢包是否已經切換至ThunderCore Mainnet，如果您的錢包並沒有TunderCore Mainnet， 我們會自動替您添加此鏈。
                     </p>
                     <br>
@@ -103,9 +109,10 @@
                         <ul>
                             <li>按鍵1：釋放第一個攜帶的技能。</li>
                             <li>按鍵2：釋放第二個攜帶的技能。</li>
-                            <li>按鍵R：釋放終極技能。</li>
+                            <li>按鍵R、T：釋放終極技能1、終極技能2。</li>
                             <li>按鍵W、A、S、D：控制人物移動方向。</li>
                             <li>按鍵O：開啟/關閉全螢幕。</li>
+                            <li>按鍵F：擺放標記旗幟。</li>
                         </ul>
                     </div>
                 </div>
@@ -128,17 +135,17 @@
                 <div class="text-card">
                     <h3>疾行</h3>
                     <img src="../images/疾行.png" loading="lazy" class="innerImage">
-                    <p>釋放技能將獲得加速效果。 CD: ?s</p>
+                    <p>釋放技能將獲得加速效果，持續10秒。 CD: 20s</p>
                 </div>
                 <div class="text-card">
                     <h3>破壞</h3>
                     <img src="../images/破壞.png" loading="lazy" class="innerImage">
-                    <p>發射一枚損毀魔彈，此魔彈可以摧毀前方的一面墻壁 CD: ?s</p>
+                    <p>發射一枚損毀魔彈，此魔彈可以摧毀前方的一面墻壁。 CD: 47s</p>
                 </div>
                 <div class="text-card">
                     <h3>狙殺</h3>
                         <img src="../images/狙殺.png" loading="lazy" class="innerImage">
-                        <p>獲得額外的攻擊技能，這個技能為遠程攻擊。 CD: ?s</p>
+                        <p>獲得額外的攻擊技能，這個技能為遠程攻擊。 CD: 30s</p>
                     </div>
             </div>
             <div class="cards">
@@ -150,7 +157,7 @@
                 <div class="text-card">
                     <h3>偵查</h3>
                     <img src="../images/偵查.png" loading="lazy" class="innerImage">
-                    <p>釋放技能時螢幕左下方將出現小地圖，偵查一定範圍內是否有敵人出現，若有則以紅點標記。 CD: ?s</p>
+                    <p>釋放技能時螢幕左下方將出現小地圖，偵查一定範圍內是否有敵人出現，持續15秒，若有則以紅點標記，無法偵查到隱身狀態的敵人。 CD: 40s</p>
                 </div>
             </div>
         </div>
@@ -163,7 +170,7 @@
             <div class="cards">
                 <div class="text-card">
                     <h3>自由者</h3>
-                    <img src="../images/自由者.gif" loading="lazy" class="innerImage">
+                    <img src="https://thumbs.gfycat.com/FlamboyantCraftyKoodoo.webp" loading="lazy" class="innerImage">
                     <p>&emsp;&emsp;只是一個想要獲得自由的法師，但他沒有任何特殊能力，唯一能夠幫助他獲得技能的方式是擁有我們的NFT可攜帶技能，如此一來自由者肯定會很高興。</p>
                     <p>&emsp;&emsp;如果您沒有我們的NFT角色，此角色將是基礎遊玩遊戲的角色。</p>
                 </div>
@@ -173,20 +180,20 @@
             <div class="cards">
                 <div class="text-card">
                     <h3>破空者</h3>
-                    <img src="../images/破空者.gif" loading="lazy" class="innerImage">
-                    <p>&emsp;&emsp;破空者擁有強大的空間操作能力，當他釋放自己的終極技能時，金幣的位置將被強制刷新至另外一個隨機位置。</p>
+                    <img src="https://thumbs.gfycat.com/ThisShowyGuppy.webp" loading="lazy" class="innerImage">
+                    <p>&emsp;&emsp;破空者擁有強大的空間操作能力，當他釋放自己的終極技能時，金幣的位置將被強制刷新至另外一個隨機位置。 CD: 62s</p>
                 </div>
                 <div class="text-card">
                     <h3>潛行者</h3>
-                    <img src="../images/潛行者.gif" loading="lazy" class="innerImage">
-                    <p>&emsp;&emsp;潛行者可以迷惑敵人的視野使他們看不到自己，但他沒辦法隱藏自己長袍下的黑煙。（需注意在隱身期間仍會受到攻擊）</p>
+                    <img src="https://thumbs.gfycat.com/SparseHilariousAsianwaterbuffalo.webp" loading="lazy" class="innerImage">
+                    <p>&emsp;&emsp;潛行者可以迷惑敵人的視野使他們看不到自己持續10秒，但他沒辦法隱藏自己長袍下的黑煙。（需注意在隱身期間仍會受到攻擊） CD：35s</p>
                 </div>
             </div>
             <div class="cards">
                 <div class="text-card">
                     <h3>束縛者</h3>
-                    <img src="../images/束縛者.gif" loading="lazy" class="innerImage">
-                    <p>&emsp;&emsp;束縛者喜歡和大家玩束縛遊戲，他沒辦法控制自己想要綁住其他法師的慾望。小心他的禁錮法術，如果被擊中你將無法執行任何操作持續5秒。</p>
+                    <img src="https://thumbs.gfycat.com/SmoothWelloffKawala.webp" loading="lazy" class="innerImage">
+                    <p>&emsp;&emsp;束縛者喜歡和大家玩束縛遊戲，他沒辦法控制自己想要綁住其他法師的慾望。小心他的禁錮法術，如果被擊中你將無法執行任何操作持續4秒。 CD：30s</p>
                 </div>
             </div>
             <h2>二階角色</h2>
@@ -195,41 +202,42 @@
             <div class="cards">
                 <div class="text-card">
                     <h3>欺詐者</h3>
-                    <img src="../images/破空者.gif" loading="lazy" class="innerImage">
+                    <img src="https://thumbs.gfycat.com/ElementaryMisguidedBillygoat-max-1mb.gif" loading="lazy" class="innerImage">
                     <p>&emsp;&emsp;欺詐者生前是個假錢詐騙慣犯，因此他帶來了製造大量假幣的能力。</p>
-                    <p>&emsp;&emsp;他的終極技能為，在真金幣周圍及地圖上部分隨機位置生成一些假金幣，除了自己觸碰到假金幣沒有任何作用外，其餘的法師碰到都會被打回出生點。但需要注意，自己碰到假金幣時該金幣仍會消失，因此如果你想要加害其他的法師必須盡量避開這些假金幣。這些假金幣將在持續一段時間之後消失。
+                    <p>&emsp;&emsp;他的終極技能為，在真金幣周圍及地圖上部分隨機位置生成一些假金幣，除了自己觸碰到假金幣沒有任何作用外，其餘的法師碰到都會被打回出生點。但需要注意，自己碰到假金幣時該金幣仍會在20秒後消失，因此如果你想要加害其他的法師必須盡量避開這些假金幣。這些假金幣將在持續一段時間之後消失。 CD：65s
                     </p>
                 </div>
                 <div class="text-card">
                     <h3>迷航者</h3>
-                    <img src="../images/潛行者.gif" loading="lazy" class="innerImage">
+                    <img src="https://thumbs.gfycat.com/WelldocumentedImmaterialHalicore.webp" loading="lazy" class="innerImage">
                     <p>&emsp;&emsp;迷航者生前是一名船員，因為他的方向感太差導致他永遠無法晉升為船長成為他這輩子的遺憾。</p>
-                    <p>&emsp;&emsp;他的終極技能為，釋放自己的腦電波干擾其餘法師的羅盤使他們的羅盤失效10秒，並清除地圖上其他玩家的標記旗幟，讓所有人都和他一樣迷失方向是他快樂的來源。</p>
+                    <p>&emsp;&emsp;他的終極技能為，釋放自己的腦電波干擾其餘法師的羅盤使他們的羅盤失效10秒，並清除地圖上其他玩家的標記旗幟，讓所有人都和他一樣迷失方向是他快樂的來源。 CD：37s</p>
                 </div>
             </div>
             <div class="cards">
                 <div class="text-card">
                     <h3>傳送者</h3>
-                    <img src="../images/束縛者.gif" loading="lazy" class="innerImage">
+                    <img src="https://thumbs.gfycat.com/AnchoredOldAmericancrayfish.webp" loading="lazy" class="innerImage">
                     <p>&emsp;&emsp;傳送者是一名科學家，主要研究時空關係並造出了自己的時光機，是的，他還沒有死亡，但在最後一次失敗的實驗中，他駕駛自己製作的時光機卻意外來到這個世界。</p>
-                    <p>&emsp;&emsp;他的終極技能為，他將利用自己的時光機傳送其他法師至地圖上的某個位置，不過由於時光機的製作不良，他沒辦法控制其他法師會被傳送到哪個位置，也許會來到金幣旁邊。。？
+                    <p>&emsp;&emsp;他的終極技能為，他將利用自己的時光機傳送其他法師至地圖上的某個位置，不過由於時光機的製作不良，他沒辦法控制其他法師會被傳送到哪個位置，也許會來到金幣旁邊。。？ CD： 60s
                     </p>
                 </div>
             </div>
             <h2>三階角色</h2>
-            <p class="explain">所有三階角色都可以攜帶兩個可攜帶技能，他們的特殊能力幾乎可以左右整場比賽的勝利。</p>
+            <p class="explain">所有三階角色都可以攜帶兩個可攜帶技能，他們的特殊能力幾乎可以左右整場比賽的勝利，三階角色的普通攻擊一旦成功擊殺目標會造成目標減少一顆已獲得的金幣。</p>
             <p class="explain">你需要獲得超稀有碎片以及兩個特定的神秘碎片方可合成出一隻三階角色。</p>
             <div class="cards">
                 <div class="text-card">
                     <h3>金牌刺客</h3>
                     <img src="../images/破空者.gif" loading="lazy" class="innerImage">
-                    <p>Every miunte you'll get "gold body" to block an attack no matter imprison, sniper or normal attack.
-                        This skill is a passive skill, it will auto trigger when you get attack.</p>
+                    <p>&emsp;&emsp;「我們是龍的傳人......」隨著一遍遍的口號響起，人手一枝的火炬逐漸將這已經足夠遼闊的廣場塞得水洩不通，這個夜晚的天空除了漫天的繁星閃爍，也被地面的火光照的熠熠生輝，雖然成為金牌刺客的人都是萬里挑一，但在龐大的人口基數下能夠有如此盛景也是不足為奇。他們全身火紅，仔細一看，全是千錘百煉的痕跡，沒人知道在成為金牌刺客之前他們受了多少常人無法忍受的痛苦，但所有人都知道，當你見到他們的那一刻，距離死亡已經不遠了。</p>
+                    <p>&emsp;&emsp;金牌刺客同時擁有束縛技能以及隱身技能，同時隱身期間他們的行走速度比平時更快，若在隱身期間使用普通攻擊擊殺目標，將會刷新隱身的冷卻時間。</p>
                 </div>
                 <div class="text-card">
                     <h3>絕對防護</h3>
                     <img src="../images/潛行者.gif" loading="lazy" class="innerImage">
-                    <p>As the skill name, when you release this skill, you'll scanning a fixed range if have opponents or not. CD: ?s</p>
+                    <p>&emsp;&emsp;「嘩......」火熱的岩漿從頭頂淋下，從頭到腳的每一吋肌膚都感受到火熱的痛楚，這是成為絕對防護的最後一道關卡，只有承受住這樣的傷害，才能成為真正的絕對防護，但經過這次岩漿的洗禮後，原本透過訓練而泛出的金光也會消失，取而代之的是全身通紅，所有想靠近他們並攻擊的人都將自食惡果。大部分的絕對防護都是預感到了自己將要成為金牌刺客的攻擊目標，為了與金牌刺客抗衡只好練就對抗他們的能力，即便訓練的過程也很可能喪命。</p>
+                    <p>&emsp;&emsp;絕對防護擁有自己的強化金身及強化偵查技能，強化後的金身技能可以反彈一切受到的攻擊並將攻擊效果回饋給對手，包含普通攻擊、束縛、狙殺或其他絕對防護反彈的傷害。絕對防護擁有非常強大的感知能力，強化後的偵查即便處於隱身狀態的敵人也無法躲過絕對防護的感知。</p>
                 </div>
             </div>
         </div>
@@ -240,7 +248,7 @@
             <div class="cards">
                 <div class="text-card">
                     <div>
-                        <img src="../images/總圖.gif" loading="lazy" class="innerImage-1">
+                        <img src="https://thumbs.gfycat.com/GeneralTimelyAnemone-size_restricted.gif" loading="lazy" class="innerImage-1">
                     </div>
                     <div class="mint">
                         <a class="mintBtn" onclick="mintNFT()">MINT !</a>
@@ -371,10 +379,13 @@
     <div class="popup-wrap">
         <div class="popup-box transform-in">
             <a class="openBtn" onclick="openBlackBox()">Open !</a>
-            <img id="move_picture" src="../images/power.png" class="gif">
+            <img id="move_picture" src="" class="gif">
             <p class="NFTname" id="name"></p>
             <a class="close-btn popup-close">x</a>
         </div>
+    </div>
+    <div class="confirm">
+        <span>等待區塊確認......</span>
     </div>
 <script src="../JS/TheHolic.js"></script>
 <script src="../JS/mintNFT.js"></script>
