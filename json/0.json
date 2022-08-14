@@ -1,0 +1,32 @@
+{
+    "title":"Accelerate",
+    "name":"Accelerate",
+    "type":"object",
+    "imageUrl":"ipfs://QmU74WKVTjpFJyppxitbzfzv7WnLFEKi1oF26N3ZgQCuZn",
+    "description":"Release skills to gain acceleration for 5 seconds.",
+    "id":0,
+    "image":"ipfs://QmU74WKVTjpFJyppxitbzfzv7WnLFEKi1oF26N3ZgQCuZn",
+    "httpUrl":"https://ipfs.io/ipfs/QmU74WKVTjpFJyppxitbzfzv7WnLFEKi1oF26N3ZgQCuZn",
+    "attributes": [
+        {
+            "display_type": "boost_percentage",
+            "trait_type": "Probability",
+            "value": "20"
+        },
+        {
+            "display_type": "boost_percentage",
+            "trait_type": "Movement",
+            "value": "80"
+        },
+        {
+            "display_type": "boost_number",
+            "trait_type": "Duration",
+            "value": "10"
+        },
+        {
+            "display_type": "boost_number",
+            "trait_type": "cool down time",
+            "value": "20"
+        }
+    ]
+}

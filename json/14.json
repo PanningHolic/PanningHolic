@@ -1,0 +1,17 @@
+{
+    "title":"Gold Medal",
+    "name":"Gold Medal",
+    "type":"object",
+    "imageUrl":"ipfs://QmQXzP64BgpUTb5chW1iWz3snbA3znPBZKMUy1uCKQ6zjD",
+    "description": "A RARE fragment! maybe have a special function?",
+    "id":14,
+    "image":"ipfs://QmQXzP64BgpUTb5chW1iWz3snbA3znPBZKMUy1uCKQ6zjD",
+    "httpUrl":"https://ipfs.io/ipfs/QmQXzP64BgpUTb5chW1iWz3snbA3znPBZKMUy1uCKQ6zjD",
+    "attributes": [
+        {
+            "display_type": "boost_percentage",
+            "trait_type": "Probability",
+            "value": "1"
+        }
+    ]
+}

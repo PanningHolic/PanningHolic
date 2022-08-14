@@ -1,0 +1,27 @@
+{
+    "title":"Destroy",
+    "name":"Destroy",
+    "type":"object",
+    "imageUrl":"ipfs://QmY2xEGp2XYD9Yff6iBYk7NMF3LPm8NShtA5dKLJGKvQ2k",
+    "description":"Shot magic ball to demolish the wall.",
+    "id":1,
+    "image":"ipfs://QmY2xEGp2XYD9Yff6iBYk7NMF3LPm8NShtA5dKLJGKvQ2k",
+    "httpUrl":"https://ipfs.io/ipfs/QmY2xEGp2XYD9Yff6iBYk7NMF3LPm8NShtA5dKLJGKvQ2k",
+    "attributes": [
+        {
+            "display_type": "boost_percentage",
+            "trait_type": "Destroy",
+            "value": "100"
+        },
+        {
+            "display_type": "boost_percentage",
+            "trait_type": "Probability",
+            "value": "8"
+        },
+        {
+            "display_type": "boost_number",
+            "trait_type": "cool down time",
+            "value": "47"
+        }
+    ]
+}
