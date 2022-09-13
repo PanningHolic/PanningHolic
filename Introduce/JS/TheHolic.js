@@ -20,14 +20,11 @@ function reveal() {
         let revealpoint = 150;
 
         if(revealtop < windowheight - revealpoint) {
-            reveals[i].classList.add('active');
             let j = 0;
             while(j < list.length) {
                 list[j++].classList.remove('active');
             }
             list[i].classList.add('active');
-        } else {
-            reveals[i].classList.remove('active');
         }
     }
 }
