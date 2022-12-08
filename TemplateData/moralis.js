@@ -5,11 +5,11 @@ const options = {
       'X-API-Key': 'E7Z0sMo5NjQJvD9ZmOJmnkeKBKJKByLoL7rppuxErl6PfLcfc7SUkszzlMlstq1D'
     }
   };
-const tokenAddress = "0x40e5e7e7066bC67518ebD81e5c05D826B4bC2e4a";
+const tokenAddress = "0x53bBBFa0e7a570cD4f6B528cF8cb68DC9fb24f5e";
 var number = [];
 
 function getNFTOwner(address) {
-    fetch('https://deep-index.moralis.io/api/v2/' + address + '/nft/' + tokenAddress + '?chain=rinkeby&format=decimal', options)
+    fetch('https://deep-index.moralis.io/api/v2/' + address + '/nft/' + tokenAddress + '?chain=polygon&format=decimal', options)
     .then(response => response.json())
     .then((response) => {
             if(response.result.length != 0){ 

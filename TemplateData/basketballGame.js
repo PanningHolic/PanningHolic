@@ -1,6 +1,6 @@
-const contractAddress = "0xaE281bf3cA8EBaAbe209b8Bb1d10963a82B061EA";
-const metamaskChainID = '18';
-const metamaskHexChainID = '0x12';
+const contractAddress = "0x6AAeef269aA99e79A199b95a881066902bfC46D3";
+const metamaskChainID = '108';
+const metamaskHexChainID = '0x6c';
 
 let EntranceBtn = document.getElementById("setEntrance");
 
@@ -38,14 +38,14 @@ function changeChainId() {
             method: 'wallet_addEthereumChain',
             params: [{
                 chainId: metamaskHexChainID,
-                chainName: "ThunderCore Testnet",
-                rpcUrls: ["https://testnet-rpc.thundercore.com"],
+                chainName: "ThunderCore Mainnet",
+                rpcUrls: ["https://mainnet-rpc.thundercore.com"],
                 nativeCurrency: {
-                    name: "TST Token",
-                    symbol: "TST",
+                    name: "TT Token",
+                    symbol: "TT",
                     decimals: 18,
                 },
-                blockExplorerUrls: ["https://explorer-testnet.thundercore.com/"]
+                blockExplorerUrls: ["https://viewblock.io/thundercore"]
             }]
         })
     })

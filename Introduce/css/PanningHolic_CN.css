@@ -102,6 +102,20 @@ section .cards .text-card h3{
     padding: 50px;
 }
 
+.addressInput{
+    outline: none;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    font-size: 18px;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+.addressInput::-webkit-input-placeholder{
+    color: #fff;
+}
+
 @media(max-width: 900px){
     section h1{
         font-size: 40px;
