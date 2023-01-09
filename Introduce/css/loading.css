@@ -1,0 +1,105 @@
+:root{
+    --s: 5;
+    --h: 18.4;
+    --speed: 5s;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: consolas;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #121213;
+}
+
+.loader{
+    position: relative;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0002);
+    z-index:-99;
+}
+
+.loader::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: #03e9f4;
+    animation: blinkCursor 0.8s steps(3) infinite;
+}
+@keyframes blinkCursor{
+    0%, 75%{
+        opacity: 1;
+    }
+    76%, 100%{
+        opacity: 0;
+    }
+}
+
+
+.loader h2{
+    position: relative;
+    color: #03e9f4;
+    letter-spacing: 5px;
+    font-size: 4em;
+    text-transform: uppercase;
+    animation:  typing 8s steps(10) infinite;
+    overflow: hidden;
+    z-index: -99;
+}
+@keyframes typing{
+    0%, 90%, 100%{
+        width: 0;
+    }
+    30%, 60%{
+        width: 401.88px;
+    }
+}
+
+.notice{
+    position: relative;
+    top: 100px;
+    color: #fff;
+    width: 820px;
+    height: calc(var(--h) * 1px);
+    overflow: hidden;
+    z-index: -99;
+    text-align: center;
+}
+
+ul{
+    display: flex;
+    flex-direction: column;
+    animation: move calc(var(--speed) * var(--s)) steps(var(--s)) infinite;
+}
+
+ul li{
+    width: 100%;
+    animation: liMove calc(var(--speed)) infinite;
+}
+@keyframes move{
+    0%{
+        transform: translate(0, 0);
+    }
+    100%{
+        transform: translate(0, calc(var(--s) * var(--h) * -1px));
+    }
+}
+@keyframes liMove {
+    0%{
+        transform: translate(0, 0);
+    }
+    30%,
+    100%{
+        transform: translate(0, calc(var(--h) * -1px));
+    }
+}

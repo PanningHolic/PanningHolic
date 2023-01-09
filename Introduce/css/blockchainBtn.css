@@ -1,0 +1,85 @@
+.blockchainBtn {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 180px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 14px;
+}
+
+.mintBtn{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 20px;
+    width: 180px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px;
+    user-select: none;
+}
+
+.openBtn{
+    position: absolute;
+    top: 50%;
+    width: 180px;
+    height: 50px;
+    transform: translate(-50%, -50%);
+    line-height: 50px;
+    font-size: 16px;
+}
+
+.blockchainBtn,
+.mintBtn,
+.openBtn {
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    color:#fff;
+    /* 圓角屬性 */
+    border-radius: 50px;
+    /* 背景漸變色  */
+    background-image: linear-gradient(to right,#03a9f4,#f441a5,#ffeb3b,#09a8f4);
+    /* 漸變色大小 */
+    background-size: 400%;
+    cursor: pointer;
+}
+
+/* 下面設計發光效果 */
+.blockchainBtn::before,
+.mintBtn::before,
+.openBtn::before{
+    content:'';
+    position: absolute;
+    top: -5px;
+    bottom: -5px;
+    left: -5px;
+    right: -5px;
+    border-radius: 50px;
+    background-image: linear-gradient(to right,#03a9f4,#f441a5,#ffeb3b,#09a8f4);
+    /* 漸變色大小 */
+    background-size: 400%;
+    /* 元素z坐標 */
+    z-index: -1;
+    /* 設置莫幅度 顯示發光效果 */
+    filter: blur(20px);
+}
+.blockchainBtn:hover,
+.mintBtn:hover,
+.openBtn:hover{
+    /* 動畫 名稱 時間 infinite 是無限次播放 */
+    animation: sun 8s infinite;
+
+}
+.blockchainBtn:hover::before,
+.mintBtn:hover::before,
+.openBtn:hover::before{
+    animation: sun 8s infinite;
+}
+
+@keyframes sun{
+    100%{
+        background-position: -400% 0;
+    }
+}
