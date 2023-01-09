@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panning Holic</title>
+    <link rel="stylesheet" href="../css/PanningHolic.css">
+    <link rel="stylesheet" href="../css/navigation.css">
+    <link rel="stylesheet" href="../css/blockchainBtn.css">
+    <link rel="stylesheet" href="../fontawesome-free-6.1.1-web/css/all.css">
+    <link rel="shortcut icon" href="../images/favicon_cute.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="../JS/NFT_abi.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r83/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.4/web3.min.js" integrity="sha512-oMd9Re3VgJcXuZJn9DN6X7S7JUc7xLYZ2UyZ85Mm/xzaW3lwBr4fV2zjuu/n5jY/Of/2JOx35CTa6zvQNxb31Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="bg">
+        <img src="https://thumbs.gfycat.com/UncomfortableBoringBinturong.webp">
+    </div>
+    <canvas></canvas>
+    <a class="blockchainBtn" data-aos="zoom-in" onclick="connectMetaMask()">Connect Wallet</a>
+    <section id="Home">
+        <div class="gameTitle reveal" data-aos="flip-left" data-aos-mirror="true">
+            <div class="titleText"><h1>PANNING</h1></div>
+            <div class="titleText"></div>
+            <div class="titleText"><h1>Holic</h1></div>
+            <p>Dedicated to National University of Tainan, Department of Computer Science & Information Engineering 112th Senior Project</p>
+        </div>
+    </section>
+    <section id="developer1">
+        <div class="container reveal" id="dev">
+            <h2 data-aos="fade-down">Developer</h2>
+            <div class="cards">
+                <div class="text-card" data-aos="fade-right" data-aos-delay="300">
+                    <h3>Yin, Wei-Li</h3>
+                    <div class="introContent">
+                        <ul>
+                            <li>NFT Desingned and Deployed, Blockchain Transcation</li>
+                            <li>Front-end Webpage Desingned</li>
+                            <li>Background Music Arrangement</li>
+                            <li>Art Desingned</li>
+                            <li>Game Introduction video cliper</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="text-card" data-aos="fade-left" data-aos-delay="500">
+                    <h3>Chen, You-Yi</h3>
+                    <div class="introContent">
+                        <ul>
+                            <li>Setting Up the Server</li>
+                            <li>Game Development, Game Desingned</li>
+                            <li>Animation Desingned</li>
+                            <li>Explain Game Introduction video, scripting</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <h2 data-aos="fade-left">About Us</h2>
+            <div class="cards">
+                <div class="text-card" data-aos="fade-right" data-aos-delay="300">
+                    <p>&emsp;&emsp;The game is developed by three university students, you can pay some entry fee to play this game through ThunderCore Mainnet, all the transaction we will draw 3% as our benefit. 
+                    </p>
+                    <p>If you want to support our team, you can transfer some ETH or TT to this address: 0xa8aD68EEFe1dEcdfb0353963b38c502018f08546, we will be very grateful to you🎉🎉🎉.
+                    </p>
+                    <br>
+                    <p>Contact Us：PanningHolicBusiness@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="intro1">
+        <div class="container reveal">
+            <h2 data-aos="fade-down">Game Introduction</h2>
+            <div class="cards">
+                <div class="text-card" data-aos="zoom-in" data-aos-delay="500">
+                    <h3>Panning Holic</h3>
+                    <p>&emsp;&emsp;The game is developed by three university students, you can pay some entry fee to play
+                     this game through ThunderCore Mainnet, all the transaction we will draw 3% as our benefit. 
+                     If you want to support our team, you can transfer some ETH or TT to this 
+                     address: 0xa8aD68EEFe1dEcdfb0353963b38c502018f08546,
+                     we will be very grateful to you🎉🎉🎉.
+                    </p>
+                    <br>
+                    <p>&emsp;&emsp;When the game start, you will see the button "login with MetaMask", we will do something:
+                        connect to our website, and check your MetaMask network whether checked ThunderCore Mainnet or not.
+                        If your MetaMask network doesn't have ThunderCore Mainnet, our game will add and switch to ThunderCore
+                        Mainnet automatically.
+                    </p>
+                    <br>
+                    <p>
+                        &emsp;&emsp;This game is a four-player game, you will gather in one room to play this horror game,
+                        use your skills and roles which you have to scramble the coin twice, you will win the game. Make sure
+                        you won't be intimidated by other players🥴.
+                    </p>
+                    <br>
+                    <p>
+                        &emsp;&emsp;Each player can attack with each other, if you get hurt, you will return to 
+                        respawn point.
+                    </p>
+                    <br>
+                    <p>
+                        &emsp;&emsp;To avoid you get lost, you can use the mark flag, notice that a map only exist three flags at the same time,
+                        when you put fourth flag, the first flag will be remove.
+                    </p>
+                    <br>
+                    <p>
+                        &emsp;&emsp;If you are the winner, you will win the entry fee paid by the remaining three players.
+                        Hope you have fun!🎊
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="intro4">
+        <div class="container reveal">
+            <h2 data-aos="fade-down">Operating Introduction</h2>
+            <div class="cards">
+                <div class="text-card"  data-aos="fade-right" data-aos-delay="300">
+                    <h3>Keyboard function</h3>
+                    <div class="introContent">
+                        <ul>
+                            <li>key 1:Release first portable skill.</li>
+                            <li>key 2:Release second protable skill.</li>
+                            <li>key R, T:Release ultimate skill 1, ultimate skill 2.</li>
+                            <li>key W, A, S, D: Control the role move.</li>
+                            <li>key O: Open/Close full screen.</li>
+                            <li>key F: Place the mark flag.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="text-card" data-aos="fade-left" data-aos-delay="500">
+                    <h3>Mouse function</h3>
+                    <div class="introContent">
+                        <ul>
+                            <li>Move mouse: Rotate the vision.</li>
+                            <li>Click: Normal attack.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="intro2">
+        <div class="container reveal">
+            <h2 data-aos="fade-down">Portable Skill Introduction</h2>
+            <div class="cards" data-aos="fade-right" data-aos-delay="300">
+                <div class="text-card">
+                    <h3>Accelerate</h3>
+                    <img src="../images/疾行.png" loading="lazy" class="innerImage">
+                    <p>Release skills to gain acceleration for 5 seconds. CD: 20s</p>
+                </div>
+                <div class="text-card">
+                    <h3>Destroy</h3>
+                    <img src="../images/破壞.png" loading="lazy" class="innerImage">
+                    <p>Shot magic ball to demolish the wall. CD: 47s</p>
+                </div>
+                <div class="text-card">
+                    <h3>Sniper</h3>
+                        <img src="../images/狙殺.png" loading="lazy" class="innerImage">
+                        <p>Get additional attack skill, this attack is ranged attack. CD: 30s</p>
+                    </div>
+            </div>
+            <div class="cards" data-aos="fade-left" data-aos-delay="500">
+                <div class="text-card">
+                    <h3>Defend</h3>
+                    <img src="../images/守護.png" loading="lazy" class="innerImage">
+                    <p>Every miunte you'll get "gold body" to block an attack no matter imprison, sniper or normal attack. This skill is a passive skill, it will auto trigger when you get attack.</p>
+                </div>
+                <div class="text-card">
+                    <h3>Detect</h3>
+                    <img src="../images/偵查.png" loading="lazy" class="innerImage">
+                    <p>As the skill name, when you release this skill, you'll scanning a fixed range if have opponents or not. (The red point are opponents, blue point is you.) CD: 40s</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="intro3">
+        <div class="container reveal">
+            <h2 data-aos="zoom-in-down">Role Introduction</h2>
+            <br>
+            <h2 data-aos="zoom-in-down">class 0</h2>
+            <section>
+                <div class="cards">
+                    <div class="text-card" data-aos="fade-right" data-aos-delay="300">
+                        <h3>Freedom Wizard</h3>
+                        <img src="https://thumbs.gfycat.com/FlamboyantCraftyKoodoo.webp" loading="lazy" class="innerImage">
+                        <p>&emsp;&emsp;Just a wizard want to get free, but he doesn't have any special skills. The only way to help him
+                            get special skills is own our NFT skills so that Freedom Wizard will be happy.</p>
+                        <p>&emsp;&emsp;This wizard is the basic wizard if you doesn't have our NFT roles.</p>
+                    </div>
+                </div>
+            </section>
+            <h2 data-aos="fade-left">class 1</h2>
+            <p class="explain" data-aos="fade-left">All the class 1 roles can choose two portable skills, and they all have their special ability.</p>
+            <section>
+                <div class="cards">
+                    <div class="text-card" data-aos="fade-right" data-aos-delay="300">
+                        <h3>space wizard</h3>
+                        <img src="https://thumbs.gfycat.com/ThisShowyGuppy.webp" loading="lazy" class="innerImage">
+                        <p>&emsp;&emsp;Space wizard has special space ability, when he release his ultimate skill, the coin's position will be forced to refresh
+                            to another romdom point. CD: 62s</p>
+                    </div>
+                    <div class="text-card" data-aos="fade-left" data-aos-delay="500">
+                        <h3>hidden wizard</h3>
+                        <img src="https://thumbs.gfycat.com/SparseHilariousAsianwaterbuffalo.webp" loading="lazy" class="innerImage">
+                        <p>&emsp;&emsp;Hidden wizard can confuse enemy's vision let them can't see him, but he can't hidden his smoke under the robe.
+                            Notice that during invisibility, hidden wizard still can be attack. CD: 35s
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="cards" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-card">
+                        <h3>imprison wizard</h3>
+                        <img src="https://thumbs.gfycat.com/SmoothWelloffKawala.webp" loading="lazy" class="innerImage">
+                        <p>&emsp;&emsp;Imprison wizard like "bind play" with everyone, he can't control himself to bind other wizards. Be careful his imprison
+                            magic, if you are hit, you can move and attack for 4 seconds. CD: 30s
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <h2 data-aos="fade-right" data-aos-delay="300">class 2</h2>
+            <p class="explain" data-aos="fade-right" data-aos-delay="300">All the class 2 roles can choose two portable skills, and they all have their special ability.</p>
+            <p class="explain" data-aos="fade-right" data-aos-delay="300">You need to collect two specific mystery fragments to synthesis one class 2 role.</p>
+            <section>
+                <div class="cards">
+                    <div class="text-card" data-aos="fade-right" data-aos-delay="300">
+                        <h3>finagle wizard</h3>
+                        <img src="https://thumbs.gfycat.com/ElementaryMisguidedBillygoat-max-1mb.gif" loading="lazy" class="innerImage">
+                        <p>&emsp;&emsp;Finagle wizard was a habitual fraudster, so he has the ability to make a lot of fake money.</p>
+                        <p>&emsp;&emsp;His special ability is that he can make some fake money around the real money, and random position at the map. If another
+                            player touch the fake money, it'll be returned to respawn point. CD: 65s
+                        </p>
+                    </div>
+                    <div class="text-card" data-aos="fade-left" data-aos-delay="500">
+                        <h3>lost wizard</h3>
+                        <img src="https://thumbs.gfycat.com/WelldocumentedImmaterialHalicore.webp" loading="lazy" class="innerImage">
+                        <p>&emsp;&emsp;迷航者生前是一名船員，因為他的方向感太差導致他永遠無法晉升為船長成為他這輩子的遺憾。</p>
+                        <p>&emsp;&emsp;他的終極技能為，釋放自己的腦電波干擾其餘法師的羅盤使他們的羅盤失效10秒，並清除地圖上其他玩家的標記旗幟，讓所有人都和他一樣迷失方向是他快樂的來源。 CD：37s</p>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="cards">
+                    <div class="text-card" data-aos="fade-up" data-aos-delay="300">
+                        <h3>傳送者</h3>
+                        <img src="https://thumbs.gfycat.com/AnchoredOldAmericancrayfish.webp" loading="lazy" class="innerImage">
+                        <p>&emsp;&emsp;傳送者是一名科學家，主要研究時空關係並造出了自己的時光機，是的，他還沒有死亡，但在最後一次失敗的實驗中，他駕駛自己製作的時光機卻意外來到這個世界。</p>
+                        <p>&emsp;&emsp;他的終極技能為，他將利用自己的時光機傳送其他法師至地圖上的某個位置，不過由於時光機的製作不良，他沒辦法控制其他法師會被傳送到哪個位置，也許會來到金幣旁邊。。？ CD： 60s
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <h2 data-aos="fade-right">class 3</h2>
+            <p class="explain" data-aos="fade-left">所有三階角色都可以攜帶兩個可攜帶技能，他們的特殊能力幾乎可以左右整場比賽的勝利，三階角色的普通攻擊一旦成功擊殺目標會造成目標減少一顆已獲得的金幣。</p>
+            <p class="explain" data-aos="fade-left">你需要獲得超稀有碎片以及兩個特定的神秘碎片方可合成出一隻三階角色。</p>
+            <section>
+                <div class="cards">
+                    <div class="text-card" data-aos="fade-right" data-aos-delay="300">
+                        <h3>金牌刺客</h3>
+                        <img src="" loading="lazy" class="innerImage">
+                        <p>&emsp;&emsp;「我們是龍的傳人......」隨著一遍遍的口號響起，人手一枝的火炬逐漸將這已經足夠遼闊的廣場塞得水洩不通，這個夜晚的天空除了漫天的繁星閃爍，也被地面的火光照的熠熠生輝，雖然成為金牌刺客的人都是萬里挑一，但在龐大的人口基數下能夠有如此盛景也是不足為奇。他們全身火紅，仔細一看，全是千錘百煉的痕跡，沒人知道在成為金牌刺客之前他們受了多少常人無法忍受的痛苦，但所有人都知道，當你見到他們的那一刻，距離死亡已經不遠了。</p>
+                        <p>&emsp;&emsp;金牌刺客同時擁有束縛技能以及隱身技能，同時隱身期間他們的行走速度比平時更快，若在隱身期間使用普通攻擊擊殺目標，將會刷新隱身的冷卻時間。</p>
+                    </div>
+                    <div class="text-card" data-aos="fade-left" data-aos-delay="500">
+                        <h3>絕對防護</h3>
+                        <img src="" loading="lazy" class="innerImage">
+                        <p>&emsp;&emsp;「嘩......」火熱的岩漿從頭頂淋下，從頭到腳的每一吋肌膚都感受到火熱的痛楚，這是成為絕對防護的最後一道關卡，只有承受住這樣的傷害，才能成為真正的絕對防護，但經過這次岩漿的洗禮後，原本透過訓練而泛出的金光也會消失，取而代之的是全身通紅，所有想靠近他們並攻擊的人都將自食惡果。大部分的絕對防護都是預感到了自己將要成為金牌刺客的攻擊目標，為了與金牌刺客抗衡只好練就對抗他們的能力，即便訓練的過程也很可能喪命。</p>
+                        <p>&emsp;&emsp;絕對防護擁有自己的強化金身及強化偵查技能，強化後的金身技能可以反彈一切受到的攻擊並將攻擊效果回饋給對手，包含普通攻擊、束縛、狙殺或其他絕對防護反彈的傷害。絕對防護擁有非常強大的感知能力，強化後的偵查即便處於隱身狀態的敵人也無法躲過絕對防護的感知。</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+    <section id="mint">
+        <div class="container reveal">
+            <h2 data-aos="fade-down">Mint Panning Holic NFT</h2>
+            <div class="cards" data-aos="zoom-in">
+                <div class="text-card" data-aos="flip-left"  data-aos-delay="500">
+                    <div>
+                        <img src="https://thumbs.gfycat.com/GeneralTimelyAnemone-size_restricted.gif" loading="lazy" class="innerImage-1">
+                    </div>
+                    <div class="mint">
+                        <a class="mintBtn" onclick="mintNFT()">MINT !</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="aboutNFT1">
+        <div class="container reveal">
+            <h2 data-aos="fade-down-right">About Panning Holic NFT</h2>
+            <div class="cards" data-aos="zoom-in">
+                <div class="text-card" data-aos="flip-left"  data-aos-delay="500">
+                    <table>
+                        <caption style="font-weight: bold;">Probaility of each NFT</caption>
+                        <tr>
+                            <th>NFT</th>
+                            <th>Probability</th>
+                            <th>NFT</th>
+                            <th>Probability</th>
+                        </tr>
+                        <tr>
+                            <td>Accelerate</td>
+                            <td>20%</td>
+                            <td>Destroy</td>
+                            <td>8%</td>
+                        </tr>
+                        <tr>
+                            <td>Sniper</td>
+                            <td>20%</td>
+                            <td>Defend</td>
+                            <td>3%</td>
+                        </tr>
+                        <tr>
+                            <td>Detect</td>
+                            <td>10%</td>
+                            <td>Hidden wizard</td>
+                            <td>5%</td>
+                        </tr>
+                        <tr>
+                            <td>Imprison Wizard</td>
+                            <td>5%</td>
+                            <td>Space Wizard</td>
+                            <td>15%</td>
+                        </tr>
+                        <tr>
+                            <td>Mystery Fragment 1</td>
+                            <td>2%</td>
+                            <td>Mystery Fragment 2</td>
+                            <td>2%</td>
+                        </tr>
+                        <tr>
+                            <td>Mystery Fragment 3</td>
+                            <td>2%</td>
+                            <td>Mystery Fragment 4</td>
+                            <td>2%</td>
+                        </tr>
+                        <tr>
+                            <td>Mystery Fragment 5</td>
+                            <td>2%</td>
+                            <td>Mystery Fragment 6</td>
+                            <td>2%</td>
+                        </tr>
+                        <tr>
+                            <td>Gold medal</td>
+                            <td>1%</td>
+                            <td>Shield</td>
+                            <td>1%</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="navigation" data-aos="zoom-in">
+        <ul>
+            <li class="list active">
+                <a href="#" id="home">
+                    <span class="icon"><i class="fa-solid fa-house"></i></span>
+                    <span class="title">Home</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#" id="developer">
+                    <span class="icon"><i class="fa-solid fa-user"></i></span>
+                    <span class="title">Developer</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#" id="intro">
+                    <span class="icon"><i class="fa-solid fa-gamepad"></i></span>
+                    <span class="title">Game Introduction</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#" id="operate">
+                    <span class="icon"><i class="fa-solid fa-keyboard"></i></span>
+                    <span class="title">Operating Introduction</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#" id="skill">
+                    <span class="icon"><i class="fa-solid fa-fire"></i></span>
+                    <span class="title">Skill Introduction</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#" id="role">
+                    <span class="icon"><i class="fa-solid fa-person"></i></span>
+                    <span class="title">Role Introduction</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#" id="MintNFT">
+                    <span class="icon"><i class="fa-brands fa-ethereum"></i></span>
+                    <span class="title">Mint Panning Holic NFT</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#" id="aboutNFT">
+                    <span class="icon"><i class="fa-solid fa-address-card"></i></span>
+                    <span class="title">About NFT</span>
+                </a>
+            </li>
+            <div class="indicator"></div>
+        </ul>
+    </div>
+    <div class="popup-wrap">
+        <div class="popup-box transform-in">
+            <a class="openBtn" onclick="openBlackBox()">Open !</a>
+            <img id="move_picture" src="" class="gif">
+            <p class="NFTname" id="name"></p>
+            <a class="close-btn popup-close">x</a>
+        </div>
+    </div>
+    <div class="confirm">
+        <span>Waiting For blockchain confirm......</span>
+    </div>
+    <script>
+        AOS.init({
+            duration: 700
+        });
+    </script>
+    <script src="../JS/TheHolic.js"></script>
+    <script src="../JS/mintNFT.js"></script>
+    <script src="../JS/star.js"></script>
+</body>
+</html>
